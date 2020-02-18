@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 50;
+    margin: 1rem 0 3rem;
+    text-align: center;
+}
+
+ul li {
+    font-size: 1rem;
+    font-weight: 30;
+    margin: 5px;
+}
+
+.input {
+    padding: 0.5rem 1rem 1rem 1rem;
+    height: 50px;
+    outline: none;
+    border: none;
+    width: 450px;
+    font-size: 1.15rem;
+    margin: 0.25rem;
+    border-radius: 25px;
+}
+
+#btn {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-color: rgb(71, 68, 68);
+    color: #fff;
+    margin-left: 1rem;
+}
+
+#btn:hover {
+    opacity: 0.5;
+}
+
+#btnRemove {
+    font-size: 1.4rem;
+    margin: 0 0.5rem;
+    background: none;
+    outline: none;
+    color: red;
+    border: none;
+    margin-top: 1rem;
+}
+
+#btnRemove:hover {
+    opacity: 0.5;
+}
+
+#delete_ {
+    margin-left: 1rem;
+}
