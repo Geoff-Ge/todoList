@@ -64,3 +64,11 @@ ul li {
 #delete_ {
     margin-left: 1rem;
 }
+
+.paragraph {
+    float: left;
+}
+
+#inputDate {
+    margin-left: 1rem;
+}

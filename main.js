@@ -1,4 +1,5 @@
 var input = document.getElementById('input');
+var inputDate = document.getElementById('inputDate');
 var btn = document.getElementById('btn');
 var lists = document.getElementById('todoList');
 var btnRemove = document.getElementById('btnRemove');
@@ -24,7 +25,7 @@ var deleteItem = function() {
     itemId.parentNode.removeChild(itemId);
 }
 
-var addNewItem = function(str) {
+var addNewItem = function(str, strDate) {
     itemsId++;
 
     var listItem = document.createElement("li");
@@ -32,7 +33,7 @@ var addNewItem = function(str) {
     var strText = document.createElement('span');
     var deleteButton = document.createElement('button');
 
-    strText.textContent = str;
+    strText.textContent = "Task is: " + str + " Due date is: " + strDate; 
     checkBox.type = 'checkbox';
     deleteButton.textContent = "delete";
 
@@ -57,23 +58,35 @@ var addList = function(task) {
 
 var addButton = function() {
     var str = input.value.trim();
+    var strDate = inputDate.value.trim();
 
-    if(str.length > 0) {
-        addList(addNewItem(str));
+    if(str.length > 0 && strDate.length > 0) {
+        addList(addNewItem(str, strDate));
 
         input.value = '';
+        inputDate.value = '';
         input.focus();
-    } else {
-        alert("should input something!");
+    } else if(str.length == 0) {
+        alert("Task should be input!");
+    } else if(strDate.length == 0) {
+        alert("Date should be input!")
     }
 }
 
 var removeAll = function() {
     document.getElementById('todoList').innerHTML = '';
+    input.focus();
 }
 
 btn.addEventListener('click', addButton);
 input.addEventListener('keyup', function(event) {
+    var keyCode = event.keyCode;
+
+    if(event.which == 13) {
+        addButton();
+    }
+});
+inputDate.addEventListener('keyup', function(event) {
     var keyCode = event.keyCode;
 
     if(event.which == 13) {
